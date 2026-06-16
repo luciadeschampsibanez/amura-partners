@@ -464,6 +464,136 @@
     .no-pos-body { font-size: 16px; color: var(--marino-tx); line-height: 1.6; margin-top: 12px; }
     .no-pos-action { display: flex; justify-content: flex-end; }
 
+    /* ─── JOB DETAIL ─── */
+    .job-detail { display: none; }
+    .job-detail.active { display: block; }
+    .job-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 500;
+      color: var(--terra); text-decoration: none; cursor: pointer;
+      margin-bottom: 40px; transition: gap .15s;
+    }
+    .job-back:hover { gap: 12px; }
+    .job-hero { padding: 72px var(--pad-h) 0; }
+    .job-hero-inner { max-width: var(--container); margin: 0 auto; }
+    .job-title {
+      font-family: 'Spectral', serif; font-weight: 300;
+      font-size: clamp(38px, 5vw, 66px); line-height: 1.0;
+      letter-spacing: -0.015em; color: var(--ink); margin: 16px 0 24px;
+    }
+    .job-title em { font-style: italic; color: var(--terra); }
+    .job-meta {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 56px;
+    }
+    .job-body { max-width: var(--container); margin: 0 auto; padding: 0 var(--pad-h) 80px; }
+    .job-section { margin-bottom: 52px; }
+    .job-section-title {
+      font-family: 'Spectral', serif; font-weight: 500;
+      font-size: 26px; color: var(--ink);
+      margin-bottom: 18px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .job-p { font-size: 17px; color: var(--body-txt); line-height: 1.7; margin-bottom: 16px; }
+    .job-p:last-child { margin-bottom: 0; }
+    .job-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .job-list li {
+      font-size: 16px; color: var(--body-txt); line-height: 1.6;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .job-list li::before {
+      content: '→'; color: var(--terra); font-size: 14px;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .job-day-list { display: flex; flex-direction: column; gap: 10px; }
+    .job-day {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px; background: var(--row-hover);
+      border-radius: 6px; border-left: 3px solid var(--terra);
+    }
+    .job-day-icon { font-size: 18px; flex-shrink: 0; }
+    .job-day-text { font-size: 15px; color: var(--body-txt); line-height: 1.5; }
+    .offer-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    .offer-item {
+      background: var(--paper); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .offer-icon { font-size: 22px; flex-shrink: 0; }
+    .offer-title { font-family: 'Spectral', serif; font-weight: 500; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
+    .offer-text { font-size: 14px; color: var(--body-txt); line-height: 1.5; }
+
+    /* ─── APPLICATION FORM ─── */
+    .apply-section {
+      background: var(--marino); padding: 80px var(--pad-h);
+    }
+    .apply-inner { max-width: 720px; margin: 0 auto; }
+    .apply-h2 {
+      font-family: 'Spectral', serif; font-weight: 300;
+      font-size: clamp(32px, 4vw, 48px); line-height: 1.05;
+      color: var(--paper); margin: 16px 0 10px;
+    }
+    .apply-h2 em { font-style: italic; color: var(--copper); }
+    .apply-sub { font-size: 16px; color: var(--marino-tx); line-height: 1.6; margin-bottom: 48px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .form-label {
+      font-family: 'Space Mono', monospace; font-size: 10.5px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--marino-tx2);
+    }
+    .form-label span { color: var(--copper); margin-left: 2px; }
+    .form-input, .form-textarea, .form-select {
+      background: rgba(255,255,255,0.06); border: 1px solid #465460;
+      border-radius: 4px; padding: 14px 16px;
+      font-family: 'Hanken Grotesk', sans-serif; font-size: 15px;
+      color: var(--paper); outline: none;
+      transition: border-color .2s, background .2s;
+      width: 100%;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #566472; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--copper); background: rgba(255,255,255,0.09);
+    }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-select { cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23AEB9C2' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 40px;
+    }
+    .form-select option { background: var(--marino); color: var(--paper); }
+    .form-file-label {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 20px;
+      border: 1.5px dashed #465460; border-radius: 6px;
+      cursor: pointer; transition: border-color .2s, background .2s;
+      font-size: 14px; color: var(--marino-tx2);
+    }
+    .form-file-label:hover { border-color: var(--copper); background: rgba(224,138,91,0.06); color: var(--paper); }
+    .form-file-label.has-file { border-color: var(--copper); color: var(--copper); background: rgba(224,138,91,0.08); }
+    input[type="file"] { display: none; }
+    .form-submit {
+      width: 100%; padding: 16px; border-radius: 4px;
+      background: var(--terra); color: var(--paper);
+      font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; font-weight: 600;
+      border: none; cursor: pointer; transition: background .2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--terra-h); }
+    .form-submit:disabled { background: #465460; cursor: not-allowed; }
+    .form-success {
+      display: none; text-align: center; padding: 48px 0;
+    }
+    .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: 'Spectral', serif; font-weight: 300; font-size: 32px;
+      color: var(--paper); margin-bottom: 12px;
+    }
+    .form-success p { font-size: 16px; color: var(--marino-tx); }
+    @media (max-width: 640px) {
+      .offer-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── PAGES ─── */
     .page { display: none; }
     .page.active { display: block; }
@@ -934,72 +1064,209 @@
      PAGE: CAREERS (Posiciones)
 ══════════════════════════════════════════ -->
 <div class="page" id="page-careers">
-  <section class="careers-hero container" style="padding-top:96px;padding-bottom:72px;">
-    <div class="eyebrow">Únete al equipo</div>
-    <h1 class="careers-h1">Construyamos juntos,<br>a <em>buen puerto</em>.</h1>
-    <p class="careers-intro">Buscamos personas que disfruten ejecutar tanto como pensar. Gente que no le tema al timón y que quiera construir cosas que importan.</p>
-  </section>
 
-  <section class="why-grid-section">
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-title">Doers e implementadores</div>
-        <p class="why-text">Aquí las ideas se ejecutan, no se archivan. Si te gusta hacer que las cosas sucedan, eres de los nuestros.</p>
+  <!-- Lista de posiciones -->
+  <div id="careers-list">
+    <section class="careers-hero container" style="padding-top:96px;padding-bottom:72px;">
+      <div class="eyebrow">Únete al equipo</div>
+      <h1 class="careers-h1">Construyamos juntos,<br>a <em>buen puerto</em>.</h1>
+      <p class="careers-intro">Buscamos personas que disfruten ejecutar tanto como pensar. Gente que no le tema al timón y que quiera construir cosas que importan.</p>
+    </section>
+
+    <section class="positions-section">
+      <div class="positions-inner">
+        <div class="positions-head">
+          <span>Posición</span>
+          <span>Tipo</span>
+          <span>Ubicación</span>
+          <span></span>
+        </div>
+        <div class="position-row" onclick="showJobDetail()">
+          <div class="pos-title">Marketing Intern</div>
+          <div class="pos-type">Tiempo completo</div>
+          <div class="pos-loc">CDMX · Híbrido</div>
+          <div class="pos-arrow">→</div>
+        </div>
       </div>
-      <div class="why-item">
-        <div class="why-title">Parte del equipo, de verdad</div>
-        <p class="why-text">Trabajamos dentro de los proyectos, no desde afuera. Eso significa impacto real, responsabilidad real y aprendizaje constante.</p>
+    </section>
+
+    <section class="no-position">
+      <div class="no-position-inner">
+        <div>
+          <h2 class="no-pos-h2">¿No ves tu posición<br>pero quieres <em>navegar</em><br>con nosotros?</h2>
+          <p class="no-pos-body">Siempre estamos abiertos a conocer gente con talento. Cuéntanos quién eres y qué puedes aportar.</p>
+        </div>
+        <div class="no-pos-action">
+          <a href="mailto:hola@amurapartners.com?subject=Quiero unirme a Amura" class="btn btn-copper">Escríbenos →</a>
+        </div>
       </div>
-      <div class="why-item">
-        <div class="why-title">Variedad que reta</div>
-        <p class="why-text">De startups a corporativos, de growth a venture building. No hay dos proyectos iguales y eso hace que cada semana sea diferente.</p>
+    </section>
+  </div>
+
+  <!-- Detalle del puesto + formulario -->
+  <div id="job-detail" style="display:none;">
+    <div class="job-hero">
+      <div class="job-hero-inner">
+        <a class="job-back" onclick="hideJobDetail()">← Volver a posiciones</a>
+        <div class="eyebrow terra">Posición abierta</div>
+        <h1 class="job-title">Marketing <em>Intern</em></h1>
+        <div class="job-meta">
+          <span class="chip">Tiempo completo</span>
+          <span class="chip">CDMX · Híbrido</span>
+          <span class="chip">Wellness</span>
+          <span class="chip dark">Abierta ahora</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="positions-section">
-    <div class="positions-inner">
-      <div class="positions-head">
-        <span>Posición</span>
-        <span>Tipo</span>
-        <span>Ubicación</span>
-        <span></span>
+    <div class="job-body">
+
+      <div class="job-section">
+        <div class="job-section-title">El puesto</div>
+        <p class="job-p">No vas a estar respondiendo correos ni haciendo reportes que nadie lee. Vas a meterte de lleno en proyectos de marketing y construcción de empresas — la mayoría en el mundo wellness — desde la estrategia hasta la ejecución. Un día estás lanzando una marca desde cero, otro estás optimizando un funnel o ideando una campaña de contenido.</p>
+        <p class="job-p">En Amura no operamos como agencia tradicional. Nos metemos dentro de los proyectos, diseñamos la estrategia y la ejecutamos como parte del equipo del cliente. Eso significa que tú también vas a trabajar así — con responsabilidad real, visibilidad real y aprendizaje constante.</p>
       </div>
 
-      <div class="position-row" onclick="alert('Próximamente — escríbenos a hola@amurapartners.com')">
-        <div class="pos-title">Growth Strategist</div>
-        <div class="pos-type">Tiempo completo</div>
-        <div class="pos-loc">CDMX / Remoto</div>
-        <div class="pos-arrow">→</div>
+      <div class="job-section">
+        <div class="job-section-title">¿Cómo se ve un día típico?</div>
+        <div class="job-day-list">
+          <div class="job-day"><div class="job-day-icon">🧭</div><div class="job-day-text">Diseñar la estrategia de lanzamiento de una marca nueva que todavía no existe</div></div>
+          <div class="job-day"><div class="job-day-icon">📊</div><div class="job-day-text">Analizar métricas de una campaña y proponer ajustes concretos, no hipótesis</div></div>
+          <div class="job-day"><div class="job-day-icon">✍️</div><div class="job-day-text">Crear contenido que realmente conecta — no el genérico de "tips de bienestar"</div></div>
+          <div class="job-day"><div class="job-day-icon">🔍</div><div class="job-day-text">Encontrar el canal de adquisición que nadie ha probado todavía</div></div>
+          <div class="job-day"><div class="job-day-icon">💡</div><div class="job-day-text">Mapearte a la competencia de un proyecto y volver con insights que cambien la dirección</div></div>
+        </div>
+        <p class="job-p" style="margin-top:20px;">No hay dos días iguales. Si eso suena caótico, quizás no es para ti. Si eso suena increíble, sigue leyendo.</p>
       </div>
 
-      <div class="position-row" onclick="alert('Próximamente — escríbenos a hola@amurapartners.com')">
-        <div class="pos-title">Product Designer</div>
-        <div class="pos-type">Tiempo completo</div>
-        <div class="pos-loc">CDMX / Remoto</div>
-        <div class="pos-arrow">→</div>
+      <div class="job-section">
+        <div class="job-section-title">Lo que buscamos</div>
+        <ul class="job-list">
+          <li><strong>Organizado/a y estructurado/a.</strong> Manejas varios frentes sin perder el hilo. Tienes un sistema — el que sea — y lo usas de verdad.</li>
+          <li><strong>Curioso/a por naturaleza.</strong> Cuando algo te llama la atención, lo investigas hasta entenderlo. No te conformas con la respuesta superficial.</li>
+          <li><strong>AI enthusiast.</strong> No te da miedo la IA — la usas. La integras a tu flujo de trabajo y sabes que quien la domina tiene una ventaja real.</li>
+          <li><strong>Propositivo/a.</strong> No esperas a que te digan qué hacer. Cuando ves un problema, ya estás pensando en soluciones.</li>
+          <li><strong>Atención al detalle casi obsesiva.</strong> Notas el error tipográfico que todos pasaron por alto. Para ti, los detalles no son detalles — son la diferencia.</li>
+          <li><strong>Excelencia académica o equivalente.</strong> Calificaciones sobresalientes, un proyecto del que estés muy orgulloso/a, un reconocimiento. Refleja cómo haces las cosas cuando algo te importa.</li>
+          <li><strong>Comunicación clara.</strong> Escribes y hablas con precisión. Sin relleno, sin rodeos.</li>
+        </ul>
       </div>
 
-      <div class="position-row" onclick="alert('Próximamente — escríbenos a hola@amurapartners.com')">
-        <div class="pos-title">Project Lead — Implementación</div>
-        <div class="pos-type">Tiempo completo</div>
-        <div class="pos-loc">CDMX / Remoto</div>
-        <div class="pos-arrow">→</div>
+      <div class="job-section">
+        <div class="job-section-title">Modalidad</div>
+        <p class="job-p">Máximo 1 día presencial a la semana en CDMX — y hay varias semanas que son 100% remote. Lo que nos importa es lo que entregas, no desde dónde ni a qué hora lo haces.</p>
       </div>
+
+      <div class="job-section">
+        <div class="job-section-title">Qué ofrecemos</div>
+        <div class="offer-grid">
+          <div class="offer-item">
+            <div class="offer-icon">🧡</div>
+            <div>
+              <div class="offer-title">Una cultura humana de verdad</div>
+              <div class="offer-text">Antes que nada eres persona. Siempre vamos a buscar tu bienestar — no es slogan, es cómo operamos.</div>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">⏰</div>
+            <div>
+              <div class="offer-title">Horario 100% flexible</div>
+              <div class="offer-text">Nos da igual cuándo lo hagas y cuánto te tardes, mientras lo hagas bien. Resultados sobre horas.</div>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">🌍</div>
+            <div>
+              <div class="offer-title">Work from anywhere</div>
+              <div class="offer-text">2 o 3 meses al año puedes trabajar desde donde quieras. En serio.</div>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon">📈</div>
+            <div>
+              <div class="offer-title">Feedback constante y transparente</div>
+              <div class="offer-text">Para que puedas crecer lo antes posible. Sin ambigüedades, sin sorpresas en la evaluación de fin de año.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <section class="no-position">
-    <div class="no-position-inner">
-      <div>
-        <h2 class="no-pos-h2">¿No ves tu posición<br>pero quieres <em>navegar</em><br>con nosotros?</h2>
-        <p class="no-pos-body">Siempre estamos abiertos a conocer gente con talento. Cuéntanos quién eres y qué puedes aportar.</p>
+    <!-- Formulario de aplicación -->
+    <section class="apply-section">
+      <div class="apply-inner">
+        <div class="eyebrow light">Aplica ahora</div>
+        <h2 class="apply-h2">¿Lista/o para poner<br><em>rumbo</em>?</h2>
+        <p class="apply-sub">Contéstanos con honestidad. Eso es lo que más nos importa.</p>
+
+        <form id="apply-form" onsubmit="submitApplication(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+            <div class="form-group">
+              <label class="form-label">Nombre<span>*</span></label>
+              <input class="form-input" type="text" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Apellido<span>*</span></label>
+              <input class="form-input" type="text" name="apellido" placeholder="Tu apellido" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Correo electrónico<span>*</span></label>
+            <input class="form-input" type="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">¿Por qué Amura y por qué ahorita?<span>*</span></label>
+            <p style="font-size:13px;color:#8A97A2;margin-bottom:8px;font-style:italic;">No nos digas lo que crees que queremos escuchar. Cuéntanos la neta.</p>
+            <textarea class="form-textarea" name="por_que_amura" placeholder="La versión honesta..." required style="min-height:120px;"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">¿Qué fue lo último que aprendiste por pura curiosidad?<span>*</span></label>
+            <p style="font-size:13px;color:#8A97A2;margin-bottom:8px;font-style:italic;">Sin que fuera para la chamba ni la escuela. Un podcast, un libro, un rabbit hole de internet a las 2am, lo que sea.</p>
+            <textarea class="form-textarea" name="ultimo_aprendizaje" placeholder="Cuéntanos..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">El logro del que más orgulloso/a te sientes<span>*</span></label>
+            <p style="font-size:13px;color:#8A97A2;margin-bottom:8px;font-style:italic;">Ese que cuando lo cuentas, se te nota en la cara. Puede ser grande o chico. Lo que importa es que fue tuyo.</p>
+            <textarea class="form-textarea" name="logro" placeholder="Ese logro..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">¿Qué es lo que más te apasiona en la vida?<span>*</span></label>
+            <p style="font-size:13px;color:#8A97A2;margin-bottom:8px;font-style:italic;">Fuera del CV. Lo que harías aunque nadie te pagara por hacerlo.</p>
+            <textarea class="form-textarea" name="pasion" placeholder="Sin filtros..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tu chamba ideal con total honestidad<span>*</span></label>
+            <p style="font-size:13px;color:#8A97A2;margin-bottom:8px;font-style:italic;">Ambiente, tipo de trabajo, ritmo, propósito. La versión real, no la de LinkedIn.</p>
+            <textarea class="form-textarea" name="chamba_ideal" placeholder="La versión real..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tu CV<span>*</span></label>
+            <label class="form-file-label" id="file-label" for="cv-upload">
+              <span id="file-icon">📎</span>
+              <span id="file-text">Subir CV en PDF</span>
+            </label>
+            <input type="file" id="cv-upload" name="cv" accept=".pdf" onchange="handleFileChange(this)" required />
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn">Enviar aplicación →</button>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">🧭</div>
+          <h3>¡Recibimos tu aplicación!</h3>
+          <p>Te contactamos pronto. Mientras tanto, nos alegra que hayas puesto rumbo hacia acá.</p>
+        </div>
       </div>
-      <div class="no-pos-action">
-        <a href="mailto:hola@amurapartners.com?subject=Quiero unirme a Amura" class="btn btn-copper">Escríbenos →</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -1082,6 +1349,59 @@
 
   function toggleMenu() {
     document.getElementById('mobile-menu').classList.toggle('open');
+  }
+
+  function showJobDetail() {
+    document.getElementById('careers-list').style.display = 'none';
+    document.getElementById('job-detail').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function hideJobDetail() {
+    document.getElementById('job-detail').style.display = 'none';
+    document.getElementById('careers-list').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function handleFileChange(input) {
+    const label = document.getElementById('file-label');
+    const text = document.getElementById('file-text');
+    const icon = document.getElementById('file-icon');
+    if (input.files && input.files[0]) {
+      text.textContent = input.files[0].name;
+      icon.textContent = '✅';
+      label.classList.add('has-file');
+    }
+  }
+
+  async function submitApplication(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const form = document.getElementById('apply-form');
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch('https://formspree.io/f/XXXXXXXX', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Enviar aplicación →';
+        alert('Algo salió mal. Intenta de nuevo o escríbenos a hola@amurapartners.com');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Enviar aplicación →';
+      alert('Algo salió mal. Intenta de nuevo o escríbenos a hola@amurapartners.com');
+    }
   }
 </script>
 </body>
