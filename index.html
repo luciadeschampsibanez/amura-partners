@@ -1365,13 +1365,18 @@
     const hash = window.location.hash.replace('#', '');
     if (hash === 'careers-intern') {
       showPage('careers');
-      showJobDetail();
+      setTimeout(() => showJobDetail(), 50);
     } else if (pages.includes(hash)) {
       showPage(hash);
     }
   }
   window.addEventListener('popstate', loadFromHash);
-  loadFromHash();
+  // wait for DOM to be fully ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadFromHash);
+  } else {
+    loadFromHash();
+  }
 
   function scrollToSection(id) {
     // if not on home, go home first then scroll
